@@ -1,0 +1,36 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+
+
+.container{
+  position: relative;
+  display: flex;
+  align-items: start;
+  align-content: center;
+  margin: auto;
+
+}
+
+.back {
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  /* object-position: 50%; */
+
+}
+
+h1 {
+  font-size: 50px;
+  font-family: 'Staatliches', cursive;
+  position: relative;
+  margin: auto;
+  color: #cc1414;
+  background-color: rgba(255, 255, 255, 0); 
+  text-shadow: 0 0 3px #201f1fbb, 0 0 5px #2b2b2c;
+}
