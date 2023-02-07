@@ -1,9 +1,8 @@
-import { ReactNode } from "react"
+//styles
 import { ContainerStyled } from "./container.styles"
 
-interface ContainerProps {
-    children: ReactNode
-}
+//types
+import ContainerProps from "./container.types"
 
 const Container = ({children}: ContainerProps) => {
     return (
