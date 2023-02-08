@@ -6,6 +6,7 @@ interface CardProps {
     animate?: any
     initial?: any
     exit?: any
+    onClick?: (e: any) => void
 }
 
 export default CardProps

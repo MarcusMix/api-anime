@@ -8,13 +8,14 @@ import { CardContainer } from "./card.styles"
 import CardProps from "./card.types"
 
 
-const Card:FC<CardProps> = ({ children, layout, animate, initial, exit}) => {
+const Card:FC<CardProps> = ({ children, layout, animate, initial, exit, onClick}) => {
     return (
         <CardContainer 
             layout={layout} 
             animate={animate} 
             initial={initial} 
             exit={exit}
+            onClick={onClick}
         >
             {children}
         </CardContainer>
