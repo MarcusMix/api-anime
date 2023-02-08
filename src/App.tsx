@@ -16,6 +16,7 @@ import ReactLoading from 'react-loading';
 //image 
 import background from './assets/anime-background.jpg'
 
+//api url
 const api = "https://kitsu.io/api/edge/"
 
 
@@ -40,14 +41,10 @@ function App() {
 
   return (
     <div className="App">
-
-      
-      <div className='container'>
+      <Container>
       <img className='back' src={background} alt="" />
         <h1>Animes</h1>
-      </div>
-
-
+      </Container>
 
       <Container>
       <Input 

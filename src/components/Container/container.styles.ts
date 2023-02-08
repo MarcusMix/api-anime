@@ -6,7 +6,6 @@ export const ContainerStyled = styled.div`
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
-    /* margin: 1rem; */
     margin: 0 auto;
     background-color: #eceee9;
     max-width: 1280px;
