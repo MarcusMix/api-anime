@@ -16,6 +16,7 @@ import { BsFillCalendarCheckFill } from 'react-icons/bs'
 
 //styles
 import './App.css'
+import { LinkAnime } from './pages/AnimeDetails.styles'
 
 //loading
 import ReactLoading from 'react-loading';
@@ -33,8 +34,6 @@ function App() {
 
   const [info, setInfo] = useState<any>({})
 
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-
   useEffect(() => {
     setInfo({})
     fetchAnimes()   
@@ -45,7 +44,7 @@ function App() {
     const response = await fetch(`${api}anime?filter[text]=${text}&page[limit]=16`)
     const dataAnimes = await response.json()
     setInfo(dataAnimes)
-    console.table(info.data)
+    console.log(dataAnimes)
   }
 
 
@@ -67,18 +66,18 @@ function App() {
         <Container>
           {info.data.map((anime: any) => {
             return (  
-            <Card 
-              onClick={() => setIsOpen(!isOpen)} 
+              <LinkAnime to={'/anime/' + anime.id}>
+              <Card 
               key={anime.id}
               layout
               animate={{opacity: 1}} 
               initial={{opacity: 0}} 
               exit={{opacity: 0}}
-            >
+              >
               <Image 
                 src={anime.attributes.posterImage.small} 
                 alt={anime.attributes.canonicalTitle} 
-              />
+                />
               <p><strong>{anime.attributes.canonicalTitle}</strong></p>
               <p> <BiCameraMovie/> Episódios: {anime.attributes.episodeCount}</p>
               <p> <MdFormatListNumbered/> Tamanho: {anime.attributes.episodeLength} min.</p>
@@ -86,10 +85,8 @@ function App() {
               <p> <VscDebugStart/> Início: {anime.attributes.startDate}</p>
               <p> <BsFillCalendarCheckFill/> Fim: {anime.attributes.endDate}</p>
 
-              {isOpen && (
-                <p>{anime.attributes.synopsis}</p>
-              )}
             </Card>
+          </LinkAnime>
             )
           })}
         </Container>
