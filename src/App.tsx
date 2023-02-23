@@ -27,7 +27,6 @@ import background from './assets/anime-background.jpg'
 //api url
 const api = "https://kitsu.io/api/edge/"
 
-
 function App() {
 
   const [text, setText] = useState<string>('naruto')
