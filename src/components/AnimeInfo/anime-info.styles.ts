@@ -11,7 +11,7 @@ export const ContainerInfo = styled.div`
     p  {
         padding: 0.5rem;
         color: white;
-        background-color: green;
+        background-color: #45CB85;
         width: 90px;
         border-radius: 0.7rem;
         margin-bottom: 1rem;
