@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
+import ReactLoading from "react-loading"
 import { useParams } from "react-router-dom"
+import { ContainerInfo, Description } from "./anime-info.styles"
 
 
 const AnimeInfo = () => {
@@ -29,19 +31,30 @@ const AnimeInfo = () => {
     console.log(anime)
     
 
-    {loading && <div>loading...</div>}
+    
   
 
     return (
-
+        <div>
+            {loading ? 
+            (
+            <ContainerInfo>
+                <ReactLoading type='bubbles' color='black' width={260}/>
+            </ContainerInfo>
+            ) : (
             <>
-                <img src={anime.coverImage?.tiny} alt="" />
-                <div>
-                    <h1>{anime.canonicalTitle}</h1>
-                    <h3>{anime.description}</h3>
-                    <p>Status: {anime.status}</p>
-                </div>
+                <img src={anime.coverImage?.small} alt={anime.slug} />
+                <ContainerInfo>
+                    <h2>{anime.canonicalTitle}</h2>
+                    <p>{anime.status}</p>
+                </ContainerInfo>
+                <Description>
+                    <h4>{anime.description}</h4>
+                    <p>Classificação: {anime.ageRatingGuide}</p>
+                </Description>
             </>
+            )}
+        </div>
     )   
 }
 
