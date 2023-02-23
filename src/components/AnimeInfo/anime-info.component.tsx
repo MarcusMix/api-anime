@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react"
 import ReactLoading from "react-loading"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import Button from "../Button/button.component"
 import { ContainerInfo, Description } from "./anime-info.styles"
+import { AiFillHome } from 'react-icons/ai'
 
 
 const AnimeInfo = () => {
+
+    const navigate = useNavigate()
 
     const [anime, setAnime] = useState<any>([])
 
@@ -27,15 +31,13 @@ const AnimeInfo = () => {
         }
         fetchSingleAnime()
     }, [])
-    
-    console.log(anime)
-    
 
-    
-  
+    const handleBackPage = () => {
+        navigate('/')
+    }
 
     return (
-        <div>
+        <>
             {loading ? 
             (
             <ContainerInfo>
@@ -52,9 +54,10 @@ const AnimeInfo = () => {
                     <h4>{anime.description}</h4>
                     <p>Classificação: {anime.ageRatingGuide}</p>
                 </Description>
+                <Button onClick={handleBackPage}> <AiFillHome/> Voltar</Button>
             </>
             )}
-        </div>
+        </>
     )   
 }
 
