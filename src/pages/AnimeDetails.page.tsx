@@ -1,9 +1,10 @@
 import AnimeInfo from "../components/AnimeInfo/anime-info.component"
 
-const AnimeDetail = () => {
+const AnimeDetails = () => {
+    
     return (
         <AnimeInfo/>
-    )
+    )   
 }
 
-export default AnimeDetail
+export default AnimeDetails
