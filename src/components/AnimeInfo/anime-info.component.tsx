@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ReactLoading from "react-loading"
 import { useNavigate, useParams } from "react-router-dom"
 import Button from "../Button/button.component"
-import { ContainerInfo, Description } from "./anime-info.styles"
+import { ContainerInfo, Description, Wrapper, WrapperImage } from "./anime-info.styles"
 import { AiFillHome } from 'react-icons/ai'
 
 
@@ -44,8 +44,10 @@ const AnimeInfo = () => {
                 <ReactLoading type='bubbles' color='black' width={260}/>
             </ContainerInfo>
             ) : (
-            <>
-                <img src={anime.coverImage?.small} alt={anime.slug} />
+            <Wrapper>
+                <WrapperImage>
+                    <img src={anime.coverImage?.small} alt={anime.slug} />
+                </WrapperImage>
                 <ContainerInfo>
                     <h2>{anime.canonicalTitle}</h2>
                     <p>{anime.status}</p>
@@ -55,7 +57,7 @@ const AnimeInfo = () => {
                     <p>Classificação: {anime.ageRatingGuide}</p>
                 </Description>
                 <Button onClick={handleBackPage}> <AiFillHome/> Voltar</Button>
-            </>
+            </Wrapper>
             )}
         </>
     )   
