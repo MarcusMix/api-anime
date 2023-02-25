@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
+    overflow: hidden;
+    margin-bottom: 4rem;
 `
 
 export const WrapperImage = styled.div`
@@ -15,14 +16,16 @@ export const WrapperImage = styled.div`
     justify-content: center;
     align-items: center;
     justify-items: center;
-    max-width: 100vh;
+    width: 100vh;
     margin: auto;
+    object-fit: cover;
 
-    & img {
-        display: flex;
+    @media (max-width: 768px) {
+            img {
+            width: 100vh;
+        }
     }
 `
-
 
 export const ContainerInfo = styled.div`
     display: flex;
@@ -46,7 +49,6 @@ export const ContainerInfo = styled.div`
 `
 
 export const Description = styled.section `
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,9 +68,20 @@ export const Description = styled.section `
         
     }
 
+    img {
+        max-width: 700px;
+        margin: 4rem;
+        border-radius: 1rem;
+    }
+
     @media (max-width: 768px) {
         h4 {
             font-size: 1rem;
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 1rem;
         }
     }
 `
