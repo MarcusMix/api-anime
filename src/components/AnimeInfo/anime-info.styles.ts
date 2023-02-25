@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     margin: 0;
     padding: 0;
     overflow: hidden;
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
 `
 
 export const WrapperImage = styled.div`
@@ -45,6 +45,10 @@ export const ContainerInfo = styled.div`
     h2 {
         font-size: 40px;
         margin: 1rem;
+        background: linear-gradient(0.9turn,#4e54c8,#8f94fb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
     }
 `
 
@@ -65,7 +69,12 @@ export const Description = styled.section `
 
     p {
         margin: 2rem;
-        
+        font-size: 2rem;
+    }
+
+    svg {
+        align-self: center;
+        vertical-align: -12%;
     }
 
     img {
@@ -81,7 +90,7 @@ export const Description = styled.section `
 
         img {
             width: 100%;
-            margin-bottom: 1rem;
+            margin-bottom: 4rem;
         }
     }
 `
