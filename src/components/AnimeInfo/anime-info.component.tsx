@@ -12,7 +12,9 @@ import ReactLoading from "react-loading"
 import { ContainerInfo, Description, Wrapper, WrapperImage } from "./anime-info.styles"
 
 //react icons
-import { AiFillHome } from 'react-icons/ai'
+import { AiFillHome, AiOutlineExclamationCircle } from 'react-icons/ai'
+import { BiHeartCircle } from 'react-icons/bi'
+import { MdSmartDisplay } from 'react-icons/md'
 
 
 const AnimeInfo = () => {
@@ -64,9 +66,9 @@ const AnimeInfo = () => {
                 </ContainerInfo>
                 <Description>
                     <h4>{anime.description}</h4>
-                    <p>Classificação: {anime.ageRatingGuide}</p>
-                    <p>Episódios: {anime.episodeCount}</p>
-                    <p>Rank de Popularidade: {anime.popularityRank}</p>
+                    <p>  <AiOutlineExclamationCircle/> Classificação: {anime.ageRatingGuide}</p>
+                    <p> <MdSmartDisplay/> Episódios: {anime.episodeCount}</p>
+                    <p> <BiHeartCircle/> Rank de Popularidade: {anime.popularityRank}</p>
                     <img src={anime.coverImage?.original} alt={anime.slug} />
                 </Description>
                 <Button onClick={handleBackPage}> <AiFillHome/> Voltar</Button>
