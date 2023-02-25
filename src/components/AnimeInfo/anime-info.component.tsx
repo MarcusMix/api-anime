@@ -1,8 +1,17 @@
+//hooks
 import { useEffect, useState } from "react"
-import ReactLoading from "react-loading"
+
+//router
 import { useNavigate, useParams } from "react-router-dom"
+
+//components
 import Button from "../Button/button.component"
+import ReactLoading from "react-loading"
+
+//styles
 import { ContainerInfo, Description, Wrapper, WrapperImage } from "./anime-info.styles"
+
+//react icons
 import { AiFillHome } from 'react-icons/ai'
 
 
@@ -23,6 +32,7 @@ const AnimeInfo = () => {
                 const response = await fetch(`https://kitsu.io/api/edge/anime/${params.id}`)
                 const responseJSON = await response.json()
                 setAnime(responseJSON.data.attributes)
+                console.log(anime)
             } catch (error) {
                 console.log(error)
             } finally {
@@ -55,6 +65,9 @@ const AnimeInfo = () => {
                 <Description>
                     <h4>{anime.description}</h4>
                     <p>Classificação: {anime.ageRatingGuide}</p>
+                    <p>Episódios: {anime.episodeCount}</p>
+                    <p>Rank de Popularidade: {anime.popularityRank}</p>
+                    <img src={anime.coverImage?.original} alt={anime.slug} />
                 </Description>
                 <Button onClick={handleBackPage}> <AiFillHome/> Voltar</Button>
             </Wrapper>
