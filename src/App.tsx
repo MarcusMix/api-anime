@@ -16,7 +16,7 @@ import { BsFillCalendarCheckFill } from 'react-icons/bs'
 
 //styles
 import './App.css'
-import { LinkAnime } from './pages/AnimeDetails.styles'
+import { LinkAnime } from './pages/AnimeDetails/AnimeDetails.styles'
 
 //loading
 import ReactLoading from 'react-loading';
