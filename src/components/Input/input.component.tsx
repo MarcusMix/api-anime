@@ -7,7 +7,7 @@ import { useDebounce } from "../../utils/useDebounce"
 import { InputStyled } from "./input.styles"
 
 //type
-import InputProps from "./input.types"
+import InputProps from "../../interface/input.types"
 
 const Input = ({ value, onChange, placeholder}: InputProps) => {
 
