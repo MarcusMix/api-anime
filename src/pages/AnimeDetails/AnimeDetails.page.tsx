@@ -1,4 +1,4 @@
-import AnimeInfo from "../components/AnimeInfo/anime-info.component"
+import AnimeInfo from "../../components/AnimeInfo/anime-info.component"
 
 const AnimeDetails = () => {
     

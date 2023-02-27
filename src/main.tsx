@@ -7,7 +7,7 @@ import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 //pages
-import AnimeDetail from './pages/AnimeDetails.page'
+import AnimeDetail from './pages/AnimeDetails/AnimeDetails.page'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
