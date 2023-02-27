@@ -5,7 +5,7 @@ import { FC, ReactNode } from "react"
 import { CardContainer } from "./card.styles"
 
 //interface
-import CardProps from "./card.types"
+import CardProps from "../../interface/card.types"
 
 
 const Card:FC<CardProps> = ({ children, layout, animate, initial, exit, onClick}) => {
