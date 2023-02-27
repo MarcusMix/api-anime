@@ -4,7 +4,7 @@ import { FC } from "react"
 import { HeaderStyled } from "./header.styles"
 
 //types
-import HeaderProps from "./header.types"
+import HeaderProps from "../../interface/header.types"
 
 const Header:FC<HeaderProps> = ({children}) => {
     return (
