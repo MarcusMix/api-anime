@@ -2,7 +2,7 @@
 import { ImageStyled } from "./image.styles"
 
 //interface
-import ImageProps from "./image.types"
+import ImageProps from "../../interface/image.types"
 
 const Image = ({ src, alt}: ImageProps) => {
     return (
