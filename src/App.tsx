@@ -23,6 +23,7 @@ import ReactLoading from 'react-loading';
 
 //image 
 import background from './assets/anime-background.jpg'
+import preloading from './assets/loading.jpg'
 
 //api url
 const api = "https://kitsu.io/api/edge/"
@@ -38,22 +39,25 @@ function App() {
     fetchAnimes()   
   }, [text])
   
-
-  const fetchAnimes = async ()  => {
-    const response = await fetch(`${api}anime?filter[text]=${text}&page[limit]=16`)
-    const dataAnimes = await response.json()
-    setInfo(dataAnimes)
-    console.log(dataAnimes)
+  const fetchAnimes = ()  => {
+    setTimeout(async () => {
+      try {
+        const response = await fetch(`${api}anime?filter[text]=${text}&page[limit]=16`)
+        const dataAnimes = await response.json()
+        setInfo(dataAnimes)
+        console.log(dataAnimes)
+      } catch (error) {
+        console.log(error)
+      } 
+    }, 1000)
   }
-
 
   return (
     <div className="App">
       <Header>
-      <img className='back' src={background} alt="background" />
-      <h1>Animes</h1>
+        <img className='back' src={background} alt="background" />
+        <h1>Animes</h1>
       </Header>
-
       <Container>
       <Input 
         value={text} 
@@ -73,17 +77,21 @@ function App() {
               initial={{opacity: 0}} 
               exit={{opacity: 0}}
               >
-              <Image 
-                src={anime.attributes.posterImage.small} 
-                alt={anime.attributes.canonicalTitle} 
-                />
+              {anime.attributes.posterImage.small ? 
+                (<Image 
+                  src={anime.attributes.posterImage.small} 
+                  alt={anime.attributes.canonicalTitle} 
+                /> 
+                ):(
+                  <img src={preloading} alt="Imagem não encontrada!" />
+                )
+              }
               <p><strong>{anime.attributes.canonicalTitle}</strong></p>
               <p> <BiCameraMovie/> Episódios: {anime.attributes.episodeCount}</p>
               <p> <MdFormatListNumbered/> Tamanho: {anime.attributes.episodeLength} min.</p>
               <p> <MdOutlineGrade/> Nota: {anime.attributes.averageRating}</p>
               <p> <VscDebugStart/> Início: {anime.attributes.startDate}</p>
               <p> <BsFillCalendarCheckFill/> Fim: {anime.attributes.endDate}</p>
-
             </Card>
           </LinkAnime>
             )
