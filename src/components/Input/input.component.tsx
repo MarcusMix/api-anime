@@ -1,6 +1,7 @@
 //hooks
 import { useState } from "react"
 
+//debounce
 import { useDebounce } from "../../utils/useDebounce"
 
 //styles
@@ -9,7 +10,7 @@ import { InputStyled } from "./input.styles"
 //type
 import InputProps from "../../interface/input.types"
 
-const Input = ({ value, onChange, placeholder}: InputProps) => {
+const Input = ({ value, onChange, placeholder }: InputProps) => {
 
     const [displayValue, setDisplayValue] = useState<string>(value)
     const debouncedChange = useDebounce(onChange, 0)
