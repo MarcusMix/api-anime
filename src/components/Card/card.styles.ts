@@ -1,4 +1,7 @@
+//styled components
 import styled from "styled-components";
+
+//framer motion
 import { motion } from "framer-motion";
 
 export const CardContainer = styled(motion.li) `
@@ -16,7 +19,6 @@ export const CardContainer = styled(motion.li) `
     font-family: 'Fira Sans';
     background-color: white;
    
-    
     & p { 
         padding: 0.5rem;
         text-align: start;
@@ -27,6 +29,4 @@ export const CardContainer = styled(motion.li) `
     & svg {
         vertical-align: -10%;
     }
-
-    
 `
