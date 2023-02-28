@@ -1,6 +1,10 @@
+//styles
 import { ButtonStyled } from "./button.styles"
 
-import {FC} from 'react'
+//react
+import { FC } from 'react'
+
+//interface
 import IButton from "../../interface/button.interface"
 
 const Button:FC<IButton> = ({ name, onClick, children }) => {
