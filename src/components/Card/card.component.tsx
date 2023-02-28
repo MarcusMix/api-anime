@@ -7,8 +7,7 @@ import { CardContainer } from "./card.styles"
 //interface
 import CardProps from "../../interface/card.types"
 
-
-const Card:FC<CardProps> = ({ children, layout, animate, initial, exit, onClick}) => {
+const Card:FC<CardProps> = ({ children, layout, animate, initial, exit, onClick }) => {
     return (
         <CardContainer 
             layout={layout} 
