@@ -1,6 +1,5 @@
 const config = () => {
-    console.log('create a config...')
-    console.log('a new file config')
+    console.log('something is wrong...')
 }
 
 export default config
